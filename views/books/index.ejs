@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Recs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1 class="title is-1 has-text-centered mt-6">MY LIBRARY</h1>
+    <div class="column box is-three-fifths is-offset-one-fifth">
+      <main>
+        <% for (let book of books) {%>
+        <div class="card">
+          <div class="card-content">
+            <div class="content has-text-centered">
+              <a href="/books/<%=book._id%>" class="has-text-primary is-size-4"
+                ><%= book.name %> - <%= book.author %></a
+              >
+            </div>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">Rating: <%=book.rating %></p>
+            <p class="card-footer-item">Recommended: <%= book.recommended%></p>
+            <p class="card-footer-item">
+              <form action="/books/<%=books._id%>">
+                
+              </form>
+            </p>
+          </footer>
+        </div>
+        <% } %>
+        <a href="books/new" class="button is-primary">Add a book</a>
+      </main>
+    </div>
+  </body>
+</html>

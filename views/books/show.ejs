@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+</div>
+  </head>
+  <body>
+    <div class="box m-6">
+      <p class="title is-2"><%=book.name %></p>
+      <p class="subtitle is-4"><%= book.author %></p>
+      <p>Comments: <%=book.comments %></p>
+      <p style="display: flex; justify-content: space-between;">        
+          <a href="/books/<%=book._id%>/edit" class="button is-primary">Edit this listing</a>
+          <a href="/books" class="button">Back to list</a>
+      </p>
+    </div>
+  </body>
+</html>

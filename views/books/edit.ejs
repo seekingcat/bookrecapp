@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Book</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <div class="column box is-three-fifths is-offset-one-fifth">
+      <h1 class="title has-text-centered">New Book</h1>
+      <form action="/books/<%=book._id%>?_method=PUT" method="post">
+        <div class="field">
+          <label class="label" for="name">Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Titlte of book"
+              value="<%=book.name%>"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="author">Author</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              name="author"
+              id="author"
+              placeholder="Author Name"
+              value="<%= book.author %>"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="rating">Rating (out of 5)</label>
+          <div class="control">
+            <input
+              class="input"
+              type="number"
+              step=".1"
+              name="rating"
+              id="rating"
+              max="5"
+              placeholder="Book Rating"
+              value="<%= book.rating %>"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="recommended">Recommended: </label>
+          <div class="control">
+            <div class="select">
+              <select id="recommended" name="recommended" id="recommended">
+                <option value="">Select one</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="comments">Comments</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              name="comments"
+              id="comments"
+              placeholder="Place comments here"
+              value="<%= book.comments %>"
+            />
+          </div>
+        </div>
+        <div class="control">
+          <button class="button is-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
